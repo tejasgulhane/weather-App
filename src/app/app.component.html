@@ -1,0 +1,21 @@
+<div class="container_data" *ngIf="weatherinfo">
+<div class="container" >
+  <div>
+    <form #form ="ngForm" (submit)="onSubmit()" class="upperdata">
+        <input type="text" placeholder="search city" name="city" [(ngModel)]="city">
+        <button>Search</button>
+    </form>
+  </div>
+  
+  <div class="lowerdata">
+    <div class="name">{{weatherinfo.location.name}}</div>
+    <div class="info"> <p>Temp : </p> <h1>{{weatherinfo.current.temperature}} °c</h1></div>
+    <div class="info"> <p>WIND : </p> <h1>{{weatherinfo.current.wind_speed}} km/hr</h1></div>
+    <div class="info"> <p>HUMIDITY : </p> <h1>{{weatherinfo.current.humidity}} %</h1></div>
+  </div>
+</div>
+
+
+</div>
+
+<router-outlet></router-outlet>
